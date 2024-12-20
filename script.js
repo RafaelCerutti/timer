@@ -1,5 +1,18 @@
-var tempo = 0;
+
+var tempo = 0
 var intervalo;
+
+document.getElementById("start-btn").addEventListener("click",function(){
+
+    let tempo_us = parseInt(document.getElementById("tempo_us").value);
+   
+    if (!isNaN(tempo_us) && tempo_us > 0){
+        temporizador(tempo_us);
+    }else{
+        alert("Insira um numenro mais que 0")
+    }
+
+});
 
 function timer() {
     if (tempo >= 0){
@@ -13,13 +26,13 @@ function timer() {
 
         tempo--;        
        
- } else {
-    clearInterval (intervalo);
- }
+    } else {
+        clearInterval (intervalo);
+    }
 }
 function temporizador(t){
     tempo = t;
-    clearInterval = (intervalo);
+    clearInterval(intervalo);
     intervalo = setInterval(timer,1000);
 }
 
