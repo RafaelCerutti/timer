@@ -5,6 +5,7 @@ var intervalo;
 document.getElementById("start-btn").addEventListener("click",function(){
 
     let tempo_us = parseInt(document.getElementById("tempo_us").value);
+    tempo_us = tempo_us * 60;
    
     if (!isNaN(tempo_us) && tempo_us > 0){
         temporizador(tempo_us);
